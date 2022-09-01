@@ -1,3 +1,5 @@
+// ***Create config file and input bot token, database, etc.***
+
 const { Client, Intents, Collection } = require("discord.js");
 const { bot_token, mongo_url } = require("./config.json");
 const { readdirSync } = require("fs");
