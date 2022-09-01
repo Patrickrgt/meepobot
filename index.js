@@ -1,7 +1,6 @@
 const { Client, Intents, Collection } = require("discord.js");
 const { bot_token, mongo_url } = require("./config.json");
 const { readdirSync } = require("fs");
-
 const mongoose = require("mongoose");
 const client = new Client({
   intents: [
@@ -11,7 +10,7 @@ const client = new Client({
   ],
 });
 
-// Command and event handler
+// Command and event handlers
 client.commands = new Collection(
   readdirSync("./commands").map(
     (cmd) => ((cmd = require(`./commands/${cmd}`)), [cmd.data.name, cmd])
